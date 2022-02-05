@@ -77,3 +77,15 @@ Dog.prototype.bark = function () {
 // test added methods
 testBird.fly();
 testDog.bark();
+
+// OVERRIDING INHERITED METHODS
+Bird.prototype.describe = function (name) {
+  console.log(name + " IS THE BIRD NAME");
+};
+
+Dog.prototype.describe = function (name) {
+  console.log(name + " IS THE DOG NAME");
+};
+// test overriding methods
+testBird.describe(testBird.name);
+testDog.describe(testDog.name);
