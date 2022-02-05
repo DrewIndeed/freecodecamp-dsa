@@ -65,3 +65,15 @@ Dog.prototype.constructor = Dog;
 // log to see constructor property
 console.log(testBird.constructor); // Bird
 console.log(testDog.constructor); // Dog
+
+// ADDING METHODS AFTER INHERITANCE
+Bird.prototype.fly = function () {
+  console.log("Kawk kawk");
+};
+
+Dog.prototype.bark = function () {
+  console.log("Woof woof");
+};
+// test added methods
+testBird.fly();
+testDog.bark();
