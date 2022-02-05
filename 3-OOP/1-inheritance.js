@@ -53,3 +53,15 @@ let testDog = new Dog('Lilili');
 // tests 
 testBird.describe();
 testDog.describe();
+
+// log to see constructor property
+console.log(testBird.constructor); // Animal
+console.log(testDog.constructor); // Animal
+
+// CHANGING THE CONSTRUCTOR PROPERTY OF SUBTYPE
+Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+
+// log to see constructor property
+console.log(testBird.constructor); // Bird
+console.log(testDog.constructor); // Dog
