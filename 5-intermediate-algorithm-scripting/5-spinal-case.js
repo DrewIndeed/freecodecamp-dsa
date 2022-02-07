@@ -60,3 +60,37 @@ console.log(spinalCase('The_Andy_Griffith_Show') + '\n');
 console.log(spinalCase('Teletubbies say Eh-oh') + '\n');
 console.log(spinalCase('AllThe-small Things') + '\n');
 // END OF: My Solution
+
+// Way 2
+console.log('------- WAY 2: using replace() -------');
+function spinalCase2(str) {
+  console.log('CASE OF: ' + str);
+
+  // putting space between uppercase letter followed by lowercase letter
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+  // replace spaces with hyphen
+  return str.replace(/\s+|_+/g, '-').toLowerCase();
+}
+
+console.log(spinalCase2('This Is Spinal Tap') + '\n');
+console.log(spinalCase2('thisIsSpinalTap') + '\n');
+console.log(spinalCase2('The_Andy_Griffith_Show') + '\n');
+console.log(spinalCase2('Teletubbies say Eh-oh') + '\n');
+console.log(spinalCase2('AllThe-small Things') + '\n');
+
+// Way 3
+console.log('------- WAY 3: using look forward in regex -------');
+function spinalCase3(str) {
+  console.log('CASE OF: ' + str);
+  return str
+    .split(/\s|_|(?=[A-Z])/)
+    .join('-')
+    .toLowerCase();
+}
+
+console.log(spinalCase3('This Is Spinal Tap') + '\n');
+console.log(spinalCase3('thisIsSpinalTap') + '\n');
+console.log(spinalCase3('The_Andy_Griffith_Show') + '\n');
+console.log(spinalCase3('Teletubbies say Eh-oh') + '\n');
+console.log(spinalCase3('AllThe-small Things') + '\n');
