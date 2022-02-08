@@ -34,7 +34,7 @@ function steamrollArray(arr) {
     }
 
     // set the content of arr as temp, because temp is now 1-level fatten
-    arr = temp.slice(0);
+    arr = [...temp];
 
     // empty temp to reset the process
     temp = [];
